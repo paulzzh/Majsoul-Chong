@@ -1,11 +1,13 @@
 # 雀魂麻将Majsoul 最近大铳脚本
-![TamperMonkey v4.8](https://img.shields.io/badge/TamperMonkey-v4.8-brightgreen.svg) ![MajsoulPlus v2.0.0-beta.2](https://img.shields.io/badge/MajsoulPlus-v2.0.0_beta_2-brightgreen.svg) [![Github](https://img.shields.io/github/stars/paulzzh/Majsoul-Chong?style=social&logo=github)](https://github.com/paulzzh/Majsoul-Chong)
+[![Majsoul v0.6.21.w](https://img.shields.io/badge/Majsoul-v0.6.21.w-brightgreen.svg)](https://majsoul.com/) ![TamperMonkey v4.8](https://img.shields.io/badge/TamperMonkey-v4.8-brightgreen.svg) [![MajsoulPlus v2.0.0-beta.4](https://img.shields.io/badge/MajsoulPlus-v2.0.0_beta_4-brightgreen.svg)](https://github.com/MajsoulPlus/majsoul-plus) [![Github](https://img.shields.io/github/stars/paulzzh/Majsoul-Chong?style=social&logo=github)](https://github.com/paulzzh/Majsoul-Chong)
 
 
 
 本脚本仅在TamperMonkey/4.8.41 Chrome/75.0.3770.142下测试过，如遇到问题欢迎提交issue
 
 本脚本同时有Majsoul-Plus插件版，可在Github上查看
+
+[点击前往GreasyFork安装](https://greasyfork.org/zh-CN/scripts/388241)
 
 ## 使用说明
 
