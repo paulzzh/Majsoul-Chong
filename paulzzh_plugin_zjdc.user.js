@@ -2,7 +2,7 @@
 // @name         【雀魂】最近大铳
 // @namespace    https://paulzzh.tech/
 // @supportURL   https://github.com/paulzzh/Majsoul-Chong
-// @version      1.1.0
+// @version      1.2.0
 // @description  最近大铳插件，让最近大和区域显示最近大铳
 // @author       Paulzzh
 // @license      MIT
@@ -15,7 +15,8 @@
 
 (function() {
     'use strict';
-    var paulzzh_plugin_zjdc = {};
+    window.paulzzh_plugin_zjdc = {};
+    paulzzh_plugin_zjdc.enable = true; //是否上报，提供给 青天井，牌谱修改 等插件一个关闭上报的接口。
     
     //==================================
     //
@@ -101,6 +102,9 @@
     
     //网络请求，铳牌记录
     paulzzh_plugin_zjdc.postxhr = function(t,ds) {
+        
+        if (paulzzh_plugin_zjdc.enable){
+        
         var mj = view.DesktopMgr.Inst.rule_mode + 1;
         if (view.DesktopMgr.Inst.game_config.meta.mode_id) {
             var gm = 2
@@ -114,7 +118,7 @@
             var he = view.DesktopMgr.Inst.player_datas[t[0].seat];
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-                    ret = JSON.parse(xhr.responseText)
+                    var ret = JSON.parse(xhr.responseText);
                     console.log(ret.message)
                 }
             };
@@ -136,7 +140,7 @@
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-                    ret = JSON.parse(xhr.responseText)
+                    var ret = JSON.parse(xhr.responseText)
                     console.log(ret.message)
                 }
             };
@@ -145,6 +149,8 @@
             var tosend={"action":"zha","self_id":GameMgr.Inst.account_id,"zhuang_id":zha.account_id,"zhuang_nick":zha.nickname,"zimo_id":zimo.account_id,"zimo_nick":zimo.nickname,"type":which,"md5":view.DesktopMgr.Inst.md5,"hules":t};
             console.log(tosend);
             xhr.send(JSON.stringify(tosend));
+        }
+        
         }
     };
     
@@ -192,9 +198,9 @@
                     clearInterval(paulzzh_plugin_zjdc.inv);
                     console.log("[最近大铳]插件已成功注入！");
                     uiscript.UI_LightTips.Inst.show("【最近大铳】插件 已成功注入！");
-                    if(localStorage.getItem("paulzzh_plugin_zjdc_xieyi") != "1.1.0"){
-                    uiscript.UI_InfoLite.Inst.show("【最近大铳】插件 权限申请\n版本:1.1.0\n\n本插件会收集您和他人的account_id,昵称,对局日期,和(铳)牌信息等信息。\n会储存您和他人的account_id,和(铳)牌信息等信息。\n为了实现插件的基础功能，这些数据是必须的。\n他们会被上传到第三方服务器 "+paulzzh_plugin_zjdc.server+"\n本插件与雀魂官方无任何联系，放铳数据均来自安装此插件的用户主动上传。\n\n温馨提示：第一次使用没有放铳数据是无法显示的，建议您先铳个大的再在个人信息页查看~\n演示视频：av65372237(b站)\n开源地址:https://github.com/paulzzh/Majsoul-Chong\n\n此提示只会显示一次，确定后将不再提示。");
-                    localStorage.setItem("paulzzh_plugin_zjdc_xieyi","1.1.0");
+                    if(localStorage.getItem("paulzzh_plugin_zjdc_xieyi") != "1.2.0"){
+                    uiscript.UI_InfoLite.Inst.show("【最近大铳】插件 权限申请\n版本:1.2.0\n\n本插件会收集您和他人的account_id,昵称,对局日期,和(铳)牌信息等信息。\n会储存您和他人的account_id,和(铳)牌信息等信息。\n为了实现插件的基础功能，这些数据是必须的。\n他们会被上传到第三方服务器 "+paulzzh_plugin_zjdc.server+"\n本插件与雀魂官方无任何联系，放铳数据均来自安装此插件的用户主动上传。\n\n温馨提示：第一次使用没有放铳数据是无法显示的，建议您先铳个大的再在个人信息页查看~\n演示视频：av65372237(b站)\n开源地址:https://github.com/paulzzh/Majsoul-Chong\n\n此提示只会显示一次，确定后将不再提示。");
+                    localStorage.setItem("paulzzh_plugin_zjdc_xieyi","1.2.0");
                     }
                 } catch(error) {
                     console.log("[最近大铳]插件注入失败" + error.message)
