@@ -2,16 +2,17 @@
 // @name         【雀魂】最近大铳
 // @namespace    https://paulzzh.tech/
 // @supportURL   https://github.com/paulzzh/Majsoul-Chong
-// @version      2.0.1
+// @version      2.0.2
 // @description  最近大铳插件，让最近大和区域显示最近大铳
 // @author       Paulzzh
 // @license      MIT
 // @match        *://majsoul.com/1/
 // @match        *://www.majsoul.com/1/
+// @match        *://game.maj-soul.com/1/
 // @match        *://game.mahjongsoul.com/
 // @match        *://mahjongsoul.game.yo-star.com/
 // @grant        none
-// @icon         https://i.loli.net/2019/08/05/EJOIypKbXuxMFeB.png
+// @icon         https://img.paulzzh.tech/other/majsoul/zjdc.png
 // ==/UserScript==
 
 (function() {
@@ -168,9 +169,9 @@
                     if(paulzzh_plugin_zjdc.show_welcome){
                         uiscript.UI_LightTips.Inst.show("【最近大铳】插件 已成功注入！");
                     }
-                    if(localStorage.getItem("paulzzh_plugin_zjdc_xieyi") != "2.0.1"){
-                    uiscript.UI_InfoLite.Inst.show("【最近大铳】插件 权限申请\n版本:2.0.1\n\n本插件会收集您和他人的account_id,昵称,对局日期,和(铳)牌信息等信息。\n会储存您和他人的account_id,和(铳)牌信息等信息。\n为了实现插件的基础功能，这些数据是必须的。\n他们会被上传到第三方服务器 "+paulzzh_plugin_zjdc.server+"\n本插件与雀魂官方无任何联系，放铳数据均来自安装此插件的用户主动上传。\n\n温馨提示：第一次使用没有放铳数据是无法显示的，建议您先铳个大的再在个人信息页查看~\n演示视频：av65372237(b站)\n开源地址:https://github.com/paulzzh/Majsoul-Chong\n\n此提示只会显示一次，确定后将不再提示。\n\n\n2.0.0更新：全新2.0.0版本发布，兼容国服日服美服，兼容铜/银/金/玉/王座/友人/比赛/休闲普通/宝牌狂热/明牌配牌/龙之目玉等三麻/四麻/活动场，其中除金玉王之外的房间依靠用户上报/好友推送\n\n欢迎来杠北战犯蓝毛毛的麻将群找姬萌萌玩：916143619（实时播报迫害毛毛）");
-                    localStorage.setItem("paulzzh_plugin_zjdc_xieyi","2.0.1");
+                    if(localStorage.getItem("paulzzh_plugin_zjdc_xieyi") != "2.0.2"){
+                    uiscript.UI_InfoLite.Inst.show("【最近大铳】插件 权限申请\n版本:2.0.2\n\n本插件会收集您和他人的account_id,昵称,对局日期,和(铳)牌信息等信息。\n会储存您和他人的account_id,和(铳)牌信息等信息。\n为了实现插件的基础功能，这些数据是必须的。\n他们会被上传到第三方服务器 "+paulzzh_plugin_zjdc.server+"\n本插件与雀魂官方无任何联系，放铳数据均来自安装此插件的用户主动上传。\n\n温馨提示：第一次使用没有放铳数据是无法显示的，建议您先铳个大的再在个人信息页查看~\n演示视频：av65372237(b站)\n开源地址:https://github.com/paulzzh/Majsoul-Chong\n\n此提示只会显示一次，确定后将不再提示。\n\n\n2.0.0更新：全新2.0.0版本发布，兼容国服日服美服，兼容铜/银/金/玉/王座/友人/比赛/休闲普通/宝牌狂热/明牌配牌/龙之目玉等三麻/四麻/活动场，其中除金玉王之外的房间依靠用户上报/好友推送\n\n欢迎来杠北战犯蓝毛毛的麻将群找姬萌萌玩：916143619（实时播报迫害毛毛）");
+                    localStorage.setItem("paulzzh_plugin_zjdc_xieyi","2.0.2");
                     }
                 } catch(error) {
                     console.log("[最近大铳]插件注入失败" + error.message)
