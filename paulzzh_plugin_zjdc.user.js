@@ -2,7 +2,7 @@
 // @name         【雀魂】最近大铳
 // @namespace    https://paulzzh.tech/
 // @supportURL   https://github.com/paulzzh/Majsoul-Chong
-// @version      2.0.2
+// @version      2.0.3
 // @description  最近大铳插件，让最近大和区域显示最近大铳
 // @author       Paulzzh
 // @license      MIT
@@ -26,7 +26,7 @@
     //
     //最近大铳 数据交换服务器   一般情况下不需要修改。
     //为了确认用户身份，会收集您和他人的account_id,昵称,对局日期,和(铳)牌信息等信息；会储存您和他人的account_id,和(铳)牌信息等信息。
-    paulzzh_plugin_zjdc.server = "https://majsoul.paulzzh.tech/api/v2/zjdc?version=2.0.1";
+    paulzzh_plugin_zjdc.server = "https://majsoul.paulzzh.tech/api/v2/zjdc?version=2.0.3";
     
     //大铳大和切换延迟(毫秒)
     paulzzh_plugin_zjdc.display_showtime = 3000;
@@ -132,8 +132,8 @@
                 try {
                     //自己详情页
                     paulzzh_plugin_zjdc.funcpds = uiscript.UI_PlayerInfo.Inst.detail_data.blocks[0].show;
-                    uiscript.UI_PlayerInfo.Inst.detail_data.blocks[0].show = function(t, e, i) {
-                        var w = String(e)+String(i);
+                    uiscript.UI_PlayerInfo.Inst.detail_data.blocks[0].show = function(t, e, n, a) {
+                        var w = String(e)+String(n);
                         var vui = uiscript.UI_PlayerInfo.Inst.detail_data.blocks[0];
                         var account_id = GameMgr.Inst.account_id;
                         
@@ -142,12 +142,12 @@
                         paulzzh_plugin_zjdc.account_id=account_id;
                         
                         paulzzh_plugin_zjdc.xhr(vui,account_id,w,t);
-                        paulzzh_plugin_zjdc.funcpds.apply(this, [t, e, i])
+                        paulzzh_plugin_zjdc.funcpds.apply(this, [t, e, n, a])
                     };
                     //别人详情页
                     paulzzh_plugin_zjdc.funcopds = uiscript.UI_OtherPlayerInfo.Inst.detail_data.blocks[0].show;
-                    uiscript.UI_OtherPlayerInfo.Inst.detail_data.blocks[0].show = function(t, e, i) {
-                        var w = String(e)+String(i);
+                    uiscript.UI_OtherPlayerInfo.Inst.detail_data.blocks[0].show = function(t, e, n, a) {
+                        var w = String(e)+String(n);
                         var vui = uiscript.UI_OtherPlayerInfo.Inst.detail_data.blocks[0];
                         var account_id = uiscript.UI_OtherPlayerInfo.Inst.account_id;
                         
@@ -156,7 +156,7 @@
                         paulzzh_plugin_zjdc.account_id=account_id;
                         
                         paulzzh_plugin_zjdc.xhr(vui,account_id,w,t);
-                        paulzzh_plugin_zjdc.funcopds.apply(this, [t, e, i])
+                        paulzzh_plugin_zjdc.funcopds.apply(this, [t, e, n, a])
                     };
                     //对局结束了
                     paulzzh_plugin_zjdc.GameEnd = game.Scene_MJ.Inst.GameEnd;
@@ -169,9 +169,9 @@
                     if(paulzzh_plugin_zjdc.show_welcome){
                         uiscript.UI_LightTips.Inst.show("【最近大铳】插件 已成功注入！");
                     }
-                    if(localStorage.getItem("paulzzh_plugin_zjdc_xieyi") != "2.0.2"){
-                    uiscript.UI_InfoLite.Inst.show("【最近大铳】插件 权限申请\n版本:2.0.2\n\n本插件会收集您和他人的account_id,昵称,对局日期,和(铳)牌信息等信息。\n会储存您和他人的account_id,和(铳)牌信息等信息。\n为了实现插件的基础功能，这些数据是必须的。\n他们会被上传到第三方服务器 "+paulzzh_plugin_zjdc.server+"\n本插件与雀魂官方无任何联系，放铳数据均来自安装此插件的用户主动上传。\n\n温馨提示：第一次使用没有放铳数据是无法显示的，建议您先铳个大的再在个人信息页查看~\n演示视频：av65372237(b站)\n开源地址:https://github.com/paulzzh/Majsoul-Chong\n\n此提示只会显示一次，确定后将不再提示。\n\n\n2.0.0更新：全新2.0.0版本发布，兼容国服日服美服，兼容铜/银/金/玉/王座/友人/比赛/休闲普通/宝牌狂热/明牌配牌/龙之目玉等三麻/四麻/活动场，其中除金玉王之外的房间依靠用户上报/好友推送\n\n欢迎来杠北战犯蓝毛毛的麻将群找姬萌萌玩：916143619（实时播报迫害毛毛）");
-                    localStorage.setItem("paulzzh_plugin_zjdc_xieyi","2.0.2");
+                    if(localStorage.getItem("paulzzh_plugin_zjdc_xieyi") != "2.0.3"){
+                    uiscript.UI_InfoLite.Inst.show("【最近大铳】插件 权限申请\n版本:2.0.3\n\n本插件会收集您和他人的account_id,昵称,对局日期,和(铳)牌信息等信息。\n会储存您和他人的account_id,和(铳)牌信息等信息。\n为了实现插件的基础功能，这些数据是必须的。\n他们会被上传到第三方服务器 "+paulzzh_plugin_zjdc.server+"\n本插件与雀魂官方无任何联系，放铳数据均来自安装此插件的用户主动上传。\n\n温馨提示：第一次使用没有放铳数据是无法显示的，建议您先铳个大的再在个人信息页查看~\n演示视频：av65372237(b站)\n开源地址:https://github.com/paulzzh/Majsoul-Chong\n\n此提示只会显示一次，确定后将不再提示。\n\n\n2.0.0更新：全新2.0.0版本发布，兼容国服日服美服，兼容铜/银/金/玉/王座/友人/比赛/休闲普通/宝牌狂热/明牌配牌/龙之目玉等三麻/四麻/活动场，其中除金玉王之外的房间依靠用户上报/好友推送\n\n欢迎来杠北战犯蓝毛毛的麻将群找姬萌萌玩：916143619（实时播报迫害毛毛）");
+                    localStorage.setItem("paulzzh_plugin_zjdc_xieyi","2.0.3");
                     }
                 } catch(error) {
                     console.log("[最近大铳]插件注入失败" + error.message)

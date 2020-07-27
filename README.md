@@ -1,9 +1,9 @@
 # 雀魂麻将Majsoul 最近大铳脚本
-[![Majsoul v0.8.14.w](https://img.shields.io/badge/Majsoul-v0.8.14.w-brightgreen.svg)](https://majsoul.com/) ![TamperMonkey v4.10](https://img.shields.io/badge/TamperMonkey-v4.10-brightgreen.svg) [![MajsoulPlus v2.0.0](https://img.shields.io/badge/MajsoulPlus-v2.0.0-brightgreen.svg)](https://github.com/MajsoulPlus/majsoul-plus) [![Github](https://img.shields.io/github/stars/paulzzh/Majsoul-Chong?style=social&logo=github)](https://github.com/paulzzh/Majsoul-Chong)
+[![Majsoul v0.8.79.w](https://img.shields.io/badge/Majsoul-v0.8.79.w-brightgreen.svg)](https://majsoul.com/) ![TamperMonkey v4.10](https://img.shields.io/badge/TamperMonkey-v4.10-brightgreen.svg) [![MajsoulPlus v2.0.0](https://img.shields.io/badge/MajsoulPlus-v2.0.0-brightgreen.svg)](https://github.com/MajsoulPlus/majsoul-plus) [![Github](https://img.shields.io/github/stars/paulzzh/Majsoul-Chong?style=social&logo=github)](https://github.com/paulzzh/Majsoul-Chong)
 
-最新版本：2.0.2
+最新版本：2.0.3
 
-本脚本仅在TamperMonkey/4.10 Chrome/83.0.4103.97 下测试过，如遇到问题欢迎提交issue
+本脚本仅在TamperMonkey/4.10 Chrome/84.0.4147.89 下测试过，如遇到问题欢迎提交issue
 
 本脚本同时有Majsoul-Plus插件版，可在[Github](https://github.com/paulzzh/Majsoul-Chong)上查看
 
