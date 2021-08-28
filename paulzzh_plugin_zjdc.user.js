@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         【雀魂】最近大铳
-// @namespace    https://paulzzh.com/
+// @namespace    https://paulzzh.tech/
 // @supportURL   https://github.com/paulzzh/Majsoul-Chong
 // @version      2.2.0
 // @description  最近大铳插件，让最近大和区域显示最近大铳
